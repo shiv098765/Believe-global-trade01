@@ -1,7 +1,8 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Instagram, Facebook, Twitter, ArrowUp } from 'lucide-react'
+import { Instagram, Facebook, Twitter,Phone, Mail, ArrowUp } from 'lucide-react'
 import Logo from '../assets/bgt-logo-new.png'
+import WhatsappLogo from '../assets/whatsapp_logo.png'
 
 const containerVariants = {
   hidden: {},
@@ -20,10 +21,6 @@ const itemVariants = {
 const Footer = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -174,11 +171,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <div className="space-y-3 text-gray-300 text-sm">
               <p className="flex items-center">
-                <span className="mr-2">📞</span>
+                <span className="mr-2"><Phone /></span>
                 +91 74055 62532
               </p>
               <p className="flex items-center">
-                <span className="mr-2">✉️</span>
+                <span className="mr-2"><Mail /></span>
                 believeglobaltrade@gmail.com
               </p>
             </div>
@@ -242,17 +239,15 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Back to Top Button */}
+      {/* Whatsapp Button */}
       <motion.button
-        onClick={scrollToTop}
-        className="fixed bottom-4 right-4 p-4 bg-indigo-600 hover:bg-indigo-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
-        whileHover={{ scale: 1.1, y: -2 }}
-        whileTap={{ scale: 0.9 }}
+        onClick={() => window.open('https://wa.me/7405562532', '_blank')}
+        className="fixed bottom-4 right-4 p-2 bg-white/70 hover:bg-white rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 z-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
-        <ArrowUp size={20} className="text-white" />
+        <img src={WhatsappLogo} alt="Whatsapp Logo" className="w-10 h-10 md:w-12 md:h-12"/>
       </motion.button>
     </motion.footer>
   )

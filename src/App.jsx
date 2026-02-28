@@ -144,6 +144,11 @@ function ServicesModal({ isOpen, onClose }) {
 function MenuModal({ isOpen, onClose, setServicesOpen }) {
   if (!isOpen) return null
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+
   return (
     <AnimatePresence>
       <motion.div
@@ -167,7 +172,7 @@ function MenuModal({ isOpen, onClose, setServicesOpen }) {
           <X className="w-5 h-5 text-gray-600" />
         </button>
         <div className="space-y-4 mt-8">
-          <button className="block w-full text-left py-2 hover:bg-gray-100 rounded font-semibold border-b border-gray-200" onClick={() => { document.getElementById('hero').scrollIntoView({behavior: 'smooth'}); onClose(); }}>Home</button>
+          <button className="block w-full text-left py-2 hover:bg-gray-100 rounded font-semibold border-b border-gray-200" onClick={ scrollToTop }>Home</button>
           <button onClick={() => { setServicesOpen(true); onClose(); }} className="block w-full text-left py-2 hover:bg-gray-100 rounded font-semibold border-b border-gray-200">Services</button>
           <button className="block w-full text-left py-2 hover:bg-gray-100 rounded font-semibold border-b border-gray-200" onClick={() => { document.getElementById('products').scrollIntoView({behavior: 'smooth'}); onClose(); }}>Products</button>
           <button className="block w-full text-left py-2 hover:bg-gray-100 rounded font-semibold border-b border-gray-200" onClick={() => { document.getElementById('about').scrollIntoView({behavior: 'smooth'}); onClose(); }}>About Us</button>
@@ -203,8 +208,12 @@ function App() {
     setServicesOpen(false)
     setClickedOpen(false)
   }
+   const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
-  return (
+
+    return (
     <motion.div className='bg-transparent h-screen'>
       <motion.div 
         className="fixed inset-0 -z-10"
@@ -227,7 +236,7 @@ function App() {
           <img src={Logo} alt="Logo" className='h-18 w-20'/>
           
           <div className="hidden md:flex gap-6">
-            <button className='bg-transparent text-gray-700 font-medium cursor-pointer hover:underline' onClick={() => document.getElementById('hero').scrollIntoView({behavior: 'smooth'})}>Home</button>
+            <button className='bg-transparent text-gray-700 font-medium cursor-pointer hover:underline' onClick={scrollToTop}>Home</button>
             <div 
               className="relative"
               onMouseEnter={handleMouseEnter}
