@@ -230,7 +230,7 @@ function App() {
           repeatType: 'reverse'
         }}
       />
-      <motion.div className='fixed top-0 w-full z-9999'
+      <motion.div className='fixed top-0 w-full z-[9999]'
        initial={{ opacity: 0 }} animate={{ opacity: 1 }} duration={3}>
         <div className='flex justify-between items-center bg-white/80 backdrop-blur-sm px-4'>
           <img src={Logo} alt="Logo" className='h-18 w-20'/>
@@ -272,7 +272,7 @@ function App() {
       
   {/* Body______________________________________________________________ */}
       
-      <main className="">
+      <main className="sm:overflow-hidden">
         <Hero />
         <Products />
         <AboutUs />

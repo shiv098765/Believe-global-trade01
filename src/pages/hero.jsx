@@ -59,7 +59,7 @@ export default function Hero() {
     }, [])
 
     return (
-        <motion.div className="overflow-x-hidden mt-18" id="hero">
+        <motion.div className="overflow-hidden mt-18" id="hero">
             <div>
             <img src={HeroBackground} alt="Hero Background" className="relative w-full h-screen object-cover" />
                 <div className="absolute inset-0 bg-black opacity-20 mt-18 h-screen"></div>

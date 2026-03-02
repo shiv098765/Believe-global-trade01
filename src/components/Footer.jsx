@@ -209,7 +209,7 @@ const Footer = () => {
         >
           <div className="flex space-x-6 mb-4 md:mb-0">
             <motion.a
-              href="#"
+              href="https://www.instagram.com/believeglobaltrade/"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               className="text-gray-300 hover:text-white transition-colors duration-300"
@@ -225,7 +225,7 @@ const Footer = () => {
               <Facebook size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://x.com/BelieveGlobal_"
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               className="text-gray-300 hover:text-white transition-colors duration-300"
